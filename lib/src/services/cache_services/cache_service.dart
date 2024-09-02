@@ -341,7 +341,7 @@ class CacheService {
   }
 
   ImageProvider _getPlaceholderImage() {
-    return const AssetImage('assets/placeholder_image.png');
+    return const AssetImage('lib/src/assets/placeholder_image.png');
   }
 
   /// Fetches image bytes from a network URL, with caching and retry logic.
@@ -896,7 +896,7 @@ class CacheService {
   ///
   /// await preloadImageResources(imageUrls);
   /// ```
-  Future<void> preloadResources(List<String> urls) async {
+  Future<void> preloadImageResources(List<String> urls) async {
     Stopwatch stopwatch = Stopwatch()..start();
     await Future.wait(
       urls.map((url) => cacheImage(url)).toList().map(

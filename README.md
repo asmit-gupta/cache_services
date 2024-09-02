@@ -1,12 +1,13 @@
 # Cache Service
 ---
 
-Cache Service is a powerful Flutter package designed to simplify and optimize the caching and display of images and PDFs in your mobile applications. With its robust caching strategies, including in-memory cache management and customizable settings, Cache Service helps reduce loading times, network requests, and resource usage, resulting in a seamless user experience.
+Cache Service is a powerful Flutter package designed to simplify and optimize the caching and display of images and PDFs in your applications. With its robust caching strategies, including in-memory cache management and customizable settings, Cache Service helps reduce loading times, network requests, and resource usage, resulting in a seamless user experience.
 
 ## Features
 
 - **CachedImage Widget**: Display images with built-in caching to reduce loading times and network requests.
 - **CachedPDF Widget**: Display PDF files with caching support, ensuring fast loading and offline access.
+- **In-Memory Cache**: Efficiently stores assets in RAM for rapid access and reduced loading times.
 - **Customizable Cache Settings**: Easily configure cache size, expiration policies, and more to fit your app's needs.
 - **Shimmer Effect Support**: Provides a shimmer effect while loading assets, offering a smooth user experience.
 
@@ -97,14 +98,14 @@ InkWell(
 ```
 
 ### Preload cache
-This function ` CacheService().preloadResources(['urls'])` can be used to pre load resources, which are going to be used later. This helps in improving customer experience. 
+This function ` CacheService().preloadImageResources(['urls'])` can be used to pre load images, which are going to be used later. This helps in improving customer experience. 
 
 ```dart
 import 'package:cache_service/cache_service.dart';
 
 InkWell(
     onTap: () {
-     CacheService().preloadResources(['urls']);
+     CacheService().preloadImageResources(['url1', 'url2']);
     },
     child: const Text(
         'preload cache',
@@ -168,7 +169,7 @@ List<Map<String, dynamic>> allItems = CacheService().memoryCache;
 
 ## Example
 
-For a complete example, check out the [example](example/) directory, which demonstrates how to use the `CacheService()` in a real-world scenario.
+For a complete example, check out the [example](https://github.com/asmit-gupta/cache_services/blob/main/example/cache_service_example.dart) directory, which demonstrates how to use the `CacheService()` in a real-world scenario.
 
 ## Contributing
 
@@ -176,8 +177,8 @@ Contributions are welcome! If you have any ideas, suggestions, or issues, feel f
 
 ## License
 
-This project is licensed under the 3-Clause BSD License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the 3-Clause BSD License - see the [LICENSE](https://github.com/asmit-gupta/cache_services?tab=License-1-ov-file#readme) file for details.
 
 ## Support
 
-If you find this package useful, please consider giving it a star on GitHub. Your support is appreciated!
+If you find this package useful, please consider giving it a [star](https://github.com/asmit-gupta/cache_services) on GitHub. Your support is appreciated!

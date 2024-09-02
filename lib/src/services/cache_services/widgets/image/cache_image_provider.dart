@@ -43,7 +43,7 @@ class CachedImageProvider extends ChangeNotifier {
   /// This static method returns a [NetworkImage] that serves as a
   /// placeholder while the actual image is loading or if it fails to load.
   static ImageProvider getPlaceholderImage() {
-    return const AssetImage('assets/placeholder_image.png');
+    return const AssetImage('lib/src/assets/placeholder_image.png');
   }
 
   /// Loads the image from the given [imageUrl] asynchronously.

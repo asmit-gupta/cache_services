@@ -45,7 +45,7 @@ class CachedPDFProvider extends ChangeNotifier {
   /// Retrieves a placeholder PDF view.
   Future<SfPdfViewer> _getPlaceholderPDF() async {
     const placeholderPdfUrl =
-        'https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf';
+        'https://morth.nic.in/sites/default/files/dd12-13_0.pdf';
     final dio = Dio();
     final response = await dio.get(placeholderPdfUrl,
         options: Options(responseType: ResponseType.bytes));
