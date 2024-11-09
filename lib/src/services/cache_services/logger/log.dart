@@ -16,18 +16,19 @@ class CustomLogger {
   ///
   /// Initializes the underlying [Logger] with custom settings and determines
   /// the current build mode using [kReleaseMode].
-  CustomLogger()
+  /// [showLogs] - flag to control logs in debug mode.
+  CustomLogger({required bool showLogs})
       : _logger = Logger(
           printer: PrettyPrinter(
-            methodCount: 0,
+            methodCount: 3,
             errorMethodCount: 8,
             lineLength: 120,
             colors: true,
             printEmojis: true,
-            printTime: true,
+            dateTimeFormat: DateTimeFormat.dateAndTime,
           ),
         ),
-        _isProduction = kReleaseMode;
+        _isProduction = kReleaseMode ? kReleaseMode : showLogs;
 
   /// Logs a debug message.
   ///

@@ -42,6 +42,7 @@ class CacheService {
   // Internal constructor for singleton pattern
   CacheService._internal();
   late final CacheConfig _cacheConfig;
+  late final CustomLogger logger;
   late Box<String> _freqBox; // Hive box for storing frequency data
   late Box<Uint8List> _cacheBox; // Hive box for storing cached data
   late Box<dynamic> _miscBox; // Hive box for storing miscellaneous data
@@ -66,9 +67,6 @@ class CacheService {
   final HashSet<String> _pendingRequests =
       HashSet<String>(); // Set of currently pending network requests
 
-  //logger to debug and print info, error.
-  final CustomLogger logger = CustomLogger();
-
   /// Initializes the CacheService by opening necessary boxes, retrieving the last cleanup date,
   /// setting the last max age check to the current time, and scheduling the next cleanup.
   ///
@@ -84,7 +82,10 @@ class CacheService {
   /// ```dart
   /// await initialize();
   /// ```
-  Future<void> initialize({CacheConfig? cacheConfig}) async {
+  Future<void> initialize({
+    CacheConfig? cacheConfig,
+    bool showLogs = true,
+  }) async {
     _cacheConfig = cacheConfig ??
         CacheConfig(
             cleanupPeriod: Duration(days: 15),
@@ -92,6 +93,7 @@ class CacheService {
             maxFileSizeBytes: 150 * 1024 * 1024,
             maxCacheSizeBytes: 500 * 1024 * 1024,
             maxRetries: 3);
+    logger = CustomLogger(showLogs: !showLogs);
     await Hive.initFlutter();
     logger.d("CacheService initialization started");
     logger.d("Opening boxes");

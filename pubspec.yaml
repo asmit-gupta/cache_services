@@ -1,6 +1,6 @@
 name: cache_service
 description: Cache Service is a Flutter package that efficiently caches images and PDFs, including in-memory caching, to reduce load times and resource use for a smoother app experience.
-version: 1.0.1
+version: 1.0.2
 repository: https://github.com/asmit-gupta/cache_services
 
 environment:

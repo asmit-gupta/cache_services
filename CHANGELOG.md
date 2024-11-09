@@ -1,3 +1,8 @@
+## 1.0.2
+- Changed LICENSE
+- fixed some typos
+- added option for switch off logs, in debug mode
+
 ## 1.0.1
 - Added documentation
 - Added placeholder image
