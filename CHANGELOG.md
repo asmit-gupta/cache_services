@@ -1,3 +1,6 @@
+## 1.0.3
+- Changed LICENSE
+
 ## 1.0.2
 - Changed LICENSE
 - fixed some typos
@@ -15,5 +18,3 @@
 
 ## 1.0.0
 - Initial version.
-
-
