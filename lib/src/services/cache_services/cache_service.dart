@@ -663,9 +663,9 @@ class CacheService {
 
     while (totalBytes < bytesToFree && !priorityQueue.isEmpty) {
       final entry = priorityQueue.removeFirst();
-      final _CacheItem = _cacheBox.get(entry.key);
-      if (_CacheItem != null) {
-        totalBytes += _CacheItem.length;
+      final cacheItem = _cacheBox.get(entry.key);
+      if (cacheItem != null) {
+        totalBytes += cacheItem.length;
         result.add(entry);
       }
     }

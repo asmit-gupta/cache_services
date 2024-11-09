@@ -82,8 +82,10 @@ class PriorityQueue<T> {
   void _heapifyUp(int index) {
     if (index == 0) return; // Base case: reached the root of the heap.
     final parentIndex = (index - 1) ~/ 2; // Calculate parent index.
-    if (_comparator(_queue[parentIndex], _queue[index]) <= 0)
-      return; // Parent is smaller or equal, heap property is restored.
+    if (_comparator(_queue[parentIndex], _queue[index]) <= 0) {
+      return;
+    }
+    // Parent is smaller or equal, heap property is restored.
     _swap(parentIndex, index); // Swap parent and current element.
     _heapifyUp(parentIndex); // Recursively heapify upwards.
   }

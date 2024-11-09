@@ -32,16 +32,17 @@ class CachedImage extends StatefulWidget {
   /// If [shimmer] is true, a shimmer effect will be shown while the image is loading.
   /// The [shimmerBaseColor] and [shimmerHighlightColor] control the colors of the shimmer effect.
   const CachedImage({
-    Key? key,
+    super.key,
     this.imageUrl,
     this.alignment = Alignment.topCenter,
     this.fit = BoxFit.cover,
     this.shimmer = true,
     this.shimmerBaseColor = const Color(0xFFD0D0D0),
     this.shimmerHighlightColor = const Color.fromARGB(255, 164, 163, 163),
-  }) : super(key: key);
+  });
 
   @override
+  // ignore: library_private_types_in_public_api
   _CachedImageState createState() => _CachedImageState();
 }
 
